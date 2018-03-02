@@ -127,16 +127,17 @@ class Exporter
      */
     public static function updateRegistryWithStatus($registry, $status)
     {
-        // accesses, kbytes and uptime should be counters, that wouldn't work well
+        // accesses, kbytes and uptime should us a set() or reset() method instead of incBy(),
+        // but that's not supported by prometheus_client_php.
         // See https://github.com/Jimdo/prometheus_client_php/issues/68
-        $accesses = $registry->registerGauge('apache', 'accesses_total', 'Current total apache accesses');
-        $accesses->set($status['Total Accesses']);
+        $accesses = $registry->registerCounter('apache', 'accesses_total', 'Current total apache accesses');
+        $accesses->incBy($status['Total Accesses']);
 
-        $kbytes = $registry->registerGauge('apache', 'sent_kilobytes_total', 'Current total kbytes sent');
-        $kbytes->set($status['Total kBytes']);
+        $kbytes = $registry->registerCounter('apache', 'sent_kilobytes_total', 'Current total kbytes sent');
+        $kbytes->incBy($status['Total kBytes']);
 
-        $uptime = $registry->registerGauge('apache', 'uptime_seconds_total', 'Current uptime in seconds');
-        $uptime->set($status['Uptime']);
+        $uptime = $registry->registerCounter('apache', 'uptime_seconds_total', 'Current uptime in seconds');
+        $uptime->incBy($status['Uptime']);
 
         $workers = $registry->registerGauge('apache', 'workers', 'Apache worker statuses', ['status']);
         $workers->set($status['BusyWorkers'], ['busy']);
