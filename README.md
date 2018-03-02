@@ -6,7 +6,7 @@ does not require running the additional exporter process.
 ## Installation
 
 ```bash
-$ composer require building5/apache-exporter-php
+$ composer require building5/apache-exporter
 ```
 
 ## Usage

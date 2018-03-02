@@ -6,7 +6,7 @@ build:
 .PHONY: build
 
 test: build
-	docker-compose run --rm apache-exporter-php composer check
+	docker-compose run --rm apache-exporter composer check
 .PHONY: test
 
 clean:
