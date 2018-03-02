@@ -1,5 +1,5 @@
 # apache-exporter-php
 
-## v1.0.0 (2018-03-01)
+## v1.0.0 (2018-03-02)
 
  * Initial release
