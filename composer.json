@@ -1,5 +1,5 @@
 {
-    "name": "building5/apache-exporter-php",
+    "name": "building5/apache-exporter",
     "description": "A library for exporting Apache status for Prometheus",
     "type": "library",
     "require": {
