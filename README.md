@@ -13,7 +13,7 @@ $ composer require building5/apache-exporter-php
 
 Be sure to have the Apache server-status page enabled and configured.
 
-To enable the status module using `a2enmod status`. It probably already has
+Enable the status module using `a2enmod status`. It probably already has
 a `status.conf` configured in `/etc/apache2/mods-enabled`, but if not, you'll
 need that, too
 
