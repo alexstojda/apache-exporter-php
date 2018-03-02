@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ruleset name="HelloWorld">
+    <description>The coding standard for the HelloWorld app.</description>
+
+    <!-- Exclude generated, minified, and code we're not responsible for. -->
+    <exclude-pattern type="relative">^vendor/*</exclude-pattern>
+
+    <!-- Show sniff codes in all reports -->
+    <arg value="s"/>
+    <!-- Show progress -->
+    <arg value="p"/>
+
+    <!-- Start with the PSR2 ruleset -->
+    <rule ref="PSR2"/>
+</ruleset>
