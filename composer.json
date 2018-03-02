@@ -1,14 +1,24 @@
 {
     "name": "building5/apache-exporter",
-    "description": "A library for exporting Apache status for Prometheus",
     "type": "library",
+    "description": "A library for exporting Apache status for Prometheus",
+    "keywords": ["apache", "prometheus"],
+    "license": "MIT",
+    "homepage": "https://github.com/building5/apache-exporter-php",
+    "authors": [
+        {
+            "name": "David M. Lee, II",
+            "email": "leedm777@yahoo.com"
+        }
+    ],
     "require": {
         "php": ">=7.1",
         "jimdo/prometheus_client_php": "^0.9.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.5",
-        "squizlabs/php_codesniffer": "^3.2"
+        "squizlabs/php_codesniffer": "^3.2",
+        "ext-apc": "*"
     },
     "autoload": {
         "psr-4": {
