@@ -110,8 +110,11 @@ class Exporter
         $lines = explode("\n", $status);
         foreach ($lines as $line) {
             if (!empty($line)) {
-                [$key, $value] = explode(': ', $line);
-                $r[$key] = $value;
+                $explodedLine = explode(': ', $line);
+                if (count($explodedLine) == 2) {
+                    [$key, $value] = $explodedLine;
+                    $r[$key] = $value;
+                }
             }
         }
 
